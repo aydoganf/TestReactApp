@@ -1,47 +1,35 @@
 import React, { Component } from 'react';
-import Navbar from "./components/Navbar";
+import Navbar from "./layout/Navbar";
 import './App.css';
 import Users from './components/Users';
+import AddUser from './forms/AddUser';
+import UpdateUser from './forms/UpdateUser';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import NotFound from './pages/NotFound';
+import Contribute from './pages/Contribute';
+
 
 class App extends Component {
-  state = {
-    users: [
-      {
-        id: 1,
-        name: "Faruk Aydoğan",
-        salary: 5000,
-        department: "Bilişim"
-      },
-      {
-        id: 2,
-        name: "Durdu Aydoğan",
-        salary: 6000,
-        department: "İç İşleri"
-      },
-      {
-        id: 3,
-        name: "Abdullah Aydoğan",
-        salary: 7000,
-        department: "Kemistry"
-      }
-    ]
-  }
-
-  deleteUser = (id) => {
-    this.setState({
-      users: this.state.users.filter(user => user.id !== id)
-    })
-  }
-
+  // <Test test="deneme" />
+  
   render(){
     return (
-      <div className="container">
-        <Navbar title="User App" />
-        <hr />
-        <Users 
-          deleteUser = {this.deleteUser} 
-          users={this.state.users} />
-      </div>
+      <Router>
+        <div className="container">
+          <Navbar title="User App" />
+          <hr />
+
+          <Switch>
+            <Route exact path="/" component={Users} />
+            <Route exact path="/add" component={AddUser} />
+            <Route exact path="/github" component={Contribute} />
+            <Route exact path="/edit/:id" component={UpdateUser} />
+            <Route component={NotFound} />
+          </Switch>
+
+          
+        </div>
+      </Router>
     );
   }
 }

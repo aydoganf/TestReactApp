@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Faruk Aydoğan",
+      "salary": "5000",
+      "department": "Bilişim"
+    },
+    {
+      "name": "Ali Veli",
+      "department": "Bilişim",
+      "salary": "15000",
+      "id": "r_PokI0"
+    },
+    {
+      "name": "Abdullah Aydogan",
+      "department": "Kemistry",
+      "salary": "6800",
+      "id": "mjb5Q_d"
+    },
+    {
+      "name": "Kemal Tanca",
+      "department": "Belediye Başkanı",
+      "salary": "4500",
+      "id": "a17hvP8"
+    },
+    {
+      "name": "Leyla Türk",
+      "department": "IK",
+      "salary": "6500",
+      "id": "WRxwbAw"
+    }
+  ]
+}
